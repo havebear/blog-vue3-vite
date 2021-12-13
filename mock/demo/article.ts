@@ -2,7 +2,7 @@
  * @Author: BGG
  * @Date: 2021-12-13 17:42:36
  * @LastEditors: BGG
- * @LastEditTime: 2021-12-13 17:51:55
+ * @LastEditTime: 2021-12-13 18:00:58
  * @Description:  文章接口
  */
 
@@ -32,7 +32,7 @@ export default [
     method: 'get',
     response: ({ query }) => {
       const { page = 1, pageSize = 20 } = query
-      return resultPageSuccess(page, pageSize, accountList)
+      return resultPageSuccess(page, pageSize, list)
     }
   }
 ] as MockMethod[]
