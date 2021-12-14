@@ -1,3 +1,10 @@
+/*
+ * @Author: BGG
+ * @Date: 2021-12-10 17:34:21
+ * @LastEditors: BGG
+ * @LastEditTime: 2021-12-14 10:35:05
+ * @Description:  
+ */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 
