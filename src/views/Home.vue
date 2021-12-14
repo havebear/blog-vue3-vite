@@ -18,7 +18,7 @@ import { Options, Vue } from 'vue-class-component'
 export default class Home extends Vue {
   mounted () {
     axios.get('/mock/article/list').then(res => {
-      console.log(res)
+      console.log(res.data)
     })
   }
 }

@@ -2,7 +2,7 @@
  * @Author: BGG
  * @Date: 2021-12-14 14:31:52
  * @LastEditors: BGG
- * @LastEditTime: 2021-12-14 15:24:05
+ * @LastEditTime: 2021-12-14 15:44:08
  * @Description:  
  */
 import Mock from 'mockjs'
@@ -47,8 +47,8 @@ export default [
     timeout: 100,
     method: 'get',
     response: ({ query }) => {
-      console.log(query)
-      return resultPageSuccess(1, 10, LIST)
+      const { pageIndex = 1, pageSize = 10 } = query || {}
+      return resultPageSuccess(pageIndex, pageSize, LIST.slice(pageIndex - 1, pageSize))
     }
   }
 ]
