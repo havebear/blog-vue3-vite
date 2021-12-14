@@ -1,24 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div v-for="item in list" :key="item.id">
+      <p>{{ item.title }}</p>
+      <p>{{ item.ctime }}</p>
+      <img :src="item.cover" :alt="item.title">
+      <p>{{ item.introduction }}</p>
+      <p>{{ item.content }}</p>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import axios from 'axios'
-import HelloWorld from '@/components/HelloWorld.vue'
 import { Options, Vue } from 'vue-class-component'
 
 @Options({
-  components: {
-    HelloWorld,
-  },
+  components: {}
 })
 export default class Home extends Vue {
+  list = []
   mounted () {
     axios.get('/mock/article/list').then(res => {
-      console.log(res.data)
+      this.list = res.data.result.rows
     })
   }
 }

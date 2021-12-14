@@ -2,7 +2,7 @@
  * @Author: BGG
  * @Date: 2021-12-14 14:31:52
  * @LastEditors: BGG
- * @LastEditTime: 2021-12-14 15:44:08
+ * @LastEditTime: 2021-12-14 17:58:54
  * @Description:  
  */
 import Mock from 'mockjs'
@@ -36,9 +36,9 @@ const LIST: Array<Article> = new Array(COUNT).fill(0).map(item => Mock.mock({
   ctime: Mock.Random.date('yyyy-MM-dd HH:mm:ss'),
   author: '@first',
   title: '@title(8, 20)',
-  cover: Mock.Random.dataImage(),
+  cover: Mock.Random.dataImage('600x270', 'HaveBear'),
   introduction: '@csentence',
-  content: CONTENT
+  content: '@cparagraph'
 }))
 
 export default [
