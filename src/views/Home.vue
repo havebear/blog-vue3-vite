@@ -6,13 +6,20 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import axios from 'axios'
+import HelloWorld from '@/components/HelloWorld.vue'
+import { Options, Vue } from 'vue-class-component'
 
 @Options({
   components: {
     HelloWorld,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  mounted () {
+    axios.get('/mock/article/list').then(res => {
+      console.log(res)
+    })
+  }
+}
 </script>

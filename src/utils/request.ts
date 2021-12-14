@@ -2,12 +2,12 @@
  * @Author: BGG
  * @Date: 2021-12-11 19:45:37
  * @LastEditors: BGG
- * @LastEditTime: 2021-12-14 10:30:19
+ * @LastEditTime: 2021-12-14 11:13:19
  * @Description:  请求拦截
  */
 
-
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import type { AxiosRequestConfig, AxiosInstance, AxiosResponse, AxiosError } from 'axios'
+import axios from 'axios'
 import appConfig from '@/config/app-config'
 
 /** 请求基地址，超时时长 */
@@ -18,15 +18,17 @@ const POST: string = 'POST'
 const DELETE: string = 'DELETE'
 const PUT: string = 'PUT'
 
-/** 请求方法 */
-const request = ({
+type RequestParams = {
   url: string,
-  params: object,
-  data: object,
-  method = GET,
-  options
-}): Promise => {
-  const axiosConfig = {
+  params?: object,
+  data?: object,
+  method?: string,
+  options?: object
+}
+
+/** 请求方法 */
+const request = ({ url, params, data, method = GET, options }: RequestParams) => {
+  const axiosConfig: RequestParams = {
     url,
     params,
     data,
@@ -40,13 +42,13 @@ const request = ({
     })
 }
 
-const getHttp = () => {}
+const getHttp = (url: string) => httpRequest({ url })
 const postHttp = () => {}
 const delHttp = () => {}
 const putHttp = () => {}
 
 /** 创建axios实例 */
-const request = axios.create({
+const httpRequest = axios.create({
   baseURL,
   timeout,
   headers: {

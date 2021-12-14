@@ -1,10 +1,3 @@
-/*
- * @Author: BGG
- * @Date: 2021-12-13 18:01:36
- * @LastEditors: BGG
- * @LastEditTime: 2021-12-14 09:35:04
- * @Description:  mock工具函数
- */
 
 /**
  * 分页数据请求成功

@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    "paths": {
+      "/@/*": ["src/*"],
+      "/#/*": ["types/*"]
+    }
+  },
   "defaultSeverity": "warning",
   "extends": [
     "tslint:recommended"
