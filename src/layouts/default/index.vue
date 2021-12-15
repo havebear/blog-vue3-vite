@@ -7,7 +7,7 @@
  */
 
 <template>
-  
+  <div>Layou</div>
 </template>
 
 <script lang="ts">

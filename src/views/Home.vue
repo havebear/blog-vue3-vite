@@ -26,3 +26,9 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style scoped lang="less">
+.home {
+  color: @color;
+}
+</style>
