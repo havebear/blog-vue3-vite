@@ -7,27 +7,29 @@
  */
 
 <template>
-  <div>Layou</div>
+  <div class="layout">
+    <layout-content />
+    <layout-menu />
+  </div>
 </template>
 
 <script lang="ts">
-import axios from 'axios'
+import LayoutMenu from './menu/index.vue'
+import LayoutContent from './content/index.vue'
 import { Options, Vue } from 'vue-class-component'
 
 @Options({
-  components: {}
+  components: {
+    LayoutMenu,
+    LayoutContent
+  }
 })
 export default class Home extends Vue {
-  list = []
-  mounted () {
-    axios.get('/mock/article/list').then(res => {
-      this.list = res.data.result.rows
-    })
-  }
+  
 }
 </script>
 
-<style>
-
+<style scoped lang="less">
+@import url("./index.less");
 </style>
 

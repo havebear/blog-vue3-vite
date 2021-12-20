@@ -1,0 +1,19 @@
+.layout {
+  height: 100%;
+  &-content {
+    padding-right: @menu_width;
+    // min-width: 0;
+    // flex: 1;
+    // overflow-y: auto;
+    // border-right: 1px solid #ddd;
+  }
+  &-menu {
+    position: fixed;
+    width: @menu_width;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: @menu_bg;
+    border-left: 1px solid #ddd;
+  }
+}
