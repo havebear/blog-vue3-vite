@@ -2,14 +2,14 @@
  * @Author: BGG
  * @Date: 2021-12-22 21:16:13
  * @LastEditors: BGG
- * @LastEditTime: 2021-12-22 21:40:11
+ * @LastEditTime: 2021-12-22 21:46:37
  * @Description:  博客项
 -->
 
 
 <template>
-  <div class="article" @click="handleClick">
-    <div class="article-title">{{ data.title }}</div>
+  <div class="article">
+    <div class="article-title" @click="handleClick">{{ data.title }}</div>
     <p class="article-time">发布于 {{ data.ctime }}</p>
     <p>{{ data.introduction }}</p>
     <img :src="data.cover" :alt="data.title">
@@ -17,19 +17,19 @@
 </template>
 
 <script lang="ts" setup>
-  import router from '@/router';
+import router from '@/router';
 
-  const props = defineProps({
-    /** 数据项 */
-    data: {
-      type: Object,
-      required: true
-    }
-  })
-
-  function handleClick () {
-    router.push({ name: 'ArticleDetail', query: { id: props.data.id } })
+const props = defineProps({
+  /** 数据项 */
+  data: {
+    type: Object,
+    required: true
   }
+})
+
+function handleClick () {
+  router.push({ name: 'ArticleDetail', query: { id: props.data.id } })
+}
 </script>
 
 <style scoped lang="less">

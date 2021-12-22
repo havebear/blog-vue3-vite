@@ -2,7 +2,7 @@
  * @Author: BGG
  * @Date: 2021-12-14 18:20:05
  * @LastEditors: BGG
- * @LastEditTime: 2021-12-22 21:43:06
+ * @LastEditTime: 2021-12-22 21:53:04
  * @Description:  首页
 -->
 
@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts">
-import axios from 'axios'
-import { ArticleItem } from '@/components/article'
 import { Options, Vue } from 'vue-class-component'
+import { ArticleItem } from '@/components/article'
+import { getArticleList } from '@/api/article'
 
 @Options({
   components: {
@@ -27,7 +27,7 @@ import { Options, Vue } from 'vue-class-component'
 export default class Article extends Vue {
   list = []
   mounted () {
-    axios.get('/mock/article/list').then(res => {
+    getArticleList({ }).then(res => {
       this.list = res.data.result.rows
     })
   }
