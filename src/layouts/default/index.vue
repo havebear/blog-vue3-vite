@@ -24,7 +24,7 @@ import { Options, Vue } from 'vue-class-component'
     LayoutContent
   }
 })
-export default class Home extends Vue {
+export default class Layout extends Vue {
   
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="article-list">
     <div v-for="item in list" :key="item.id">
       <p>{{ item.title }}</p>
       <p>{{ item.ctime }}</p>
@@ -17,7 +17,7 @@ import { Options, Vue } from 'vue-class-component'
 @Options({
   components: {}
 })
-export default class Home extends Vue {
+export default class ArticleList extends Vue {
   list = []
   mounted () {
     axios.get('/mock/article/list').then(res => {
@@ -28,7 +28,7 @@ export default class Home extends Vue {
 </script>
 
 <style scoped lang="less">
-.home {
+.article-list {
   color: @color;
 }
 </style>
